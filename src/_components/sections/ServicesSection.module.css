@@ -1,0 +1,84 @@
+.wrapper {
+  background-color: var(--color-surface);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.card {
+  background-color: var(--color-bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.imgWrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background-color: var(--color-surface);
+}
+
+.imgWrapper img {
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .imgWrapper img {
+  transform: scale(1.04);
+}
+
+.cardBody {
+  padding: var(--space-6);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.cardTitle {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-fg);
+}
+
+.cardDesc {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  flex: 1;
+}
+
+.cardArrow {
+  font-size: var(--text-lg);
+  color: var(--color-accent);
+  transition: transform var(--transition-fast);
+  display: inline-block;
+  margin-top: var(--space-2);
+}
+
+.card:hover .cardArrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

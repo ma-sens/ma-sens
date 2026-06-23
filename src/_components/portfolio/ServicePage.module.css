@@ -1,0 +1,162 @@
+.hero {
+  padding-block: var(--space-16);
+  background-color: var(--color-surface);
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.h1 {
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-fg);
+}
+
+.intro {
+  font-size: var(--text-lg);
+  color: var(--color-muted);
+  line-height: 1.7;
+  max-width: 44ch;
+}
+
+.heroCta {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-bg);
+  background-color: var(--color-fg);
+  padding: var(--space-3) var(--space-8);
+  border-radius: var(--radius-sm);
+  width: fit-content;
+  transition: background-color var(--transition-base), transform var(--transition-fast);
+}
+
+.heroCta:hover {
+  background-color: var(--color-black);
+  transform: translateY(-1px);
+}
+
+.heroImg {
+  position: relative;
+  height: 420px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--color-border);
+}
+
+/* Benefits */
+.benefits {
+  background-color: var(--color-bg);
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.benefitCard {
+  padding: var(--space-8);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.priceCard {
+  background-color: var(--color-surface);
+  border-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.cardTitle {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-fg);
+  margin-bottom: var(--space-4);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.listItem {
+  display: flex;
+  gap: var(--space-3);
+  font-size: var(--text-base);
+  color: var(--color-fg);
+  align-items: flex-start;
+}
+
+.check {
+  color: var(--color-accent);
+  font-size: var(--text-base);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.priceText {
+  font-size: var(--text-base);
+  color: var(--color-muted);
+}
+
+.priceNote {
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  font-style: italic;
+}
+
+.priceCta {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-bg);
+  background-color: var(--color-accent);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-sm);
+  margin-top: var(--space-2);
+  width: fit-content;
+  transition: background-color var(--transition-fast);
+}
+
+.priceCta:hover {
+  background-color: var(--color-accent-dark);
+}
+
+.galleryTitle {
+  font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl));
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+  }
+
+  .heroImg {
+    height: 300px;
+  }
+
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+  }
+}
