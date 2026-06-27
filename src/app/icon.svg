@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!--
+    Ruler: tall | S S S | middle | S S S
+    All bottom-aligned at y=82 (baseline top edge)
+    tall   h=65 → y=17
+    middle h=42 → y=40
+    short  h=22 → y=60
+    Centers spaced 11px apart: 10, 21, 32, 43, 54, 65, 76, 87
+  -->
+  <rect x="8"  y="32" width="4" height="50" fill="#ffffff"/><!-- tall   -->
+  <rect x="19" y="60" width="3" height="22" fill="#ffffff"/><!-- short  -->
+  <rect x="30" y="60" width="3" height="22" fill="#ffffff"/><!-- short  -->
+  <rect x="41" y="60" width="3" height="22" fill="#ffffff"/><!-- short  -->
+  <rect x="52" y="40" width="4" height="42" fill="#ffffff"/><!-- middle -->
+  <rect x="63" y="60" width="3" height="22" fill="#ffffff"/><!-- short  -->
+  <rect x="74" y="60" width="3" height="22" fill="#ffffff"/><!-- short  -->
+  <rect x="85" y="60" width="3" height="22" fill="#ffffff"/><!-- short  -->
+  <!-- Baseline -->
+  <rect x="8" y="82" width="80" height="4" fill="#ffffff"/>
+</svg>

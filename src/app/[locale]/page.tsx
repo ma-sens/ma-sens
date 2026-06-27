@@ -18,7 +18,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: rawLocale } = await params;
   const locale: Locale = isValidLocale(rawLocale) ? rawLocale : defaultLocale;
   const t = getTranslations(locale);
-  return { title: t.siteTitle, description: t.siteDescription };
+  return {
+    title: t.siteTitle,
+    description: t.siteDescription,
+    openGraph: {
+      title: t.siteTitle,
+      description: t.siteDescription,
+    },
+    twitter: {
+      title: t.siteTitle,
+      description: t.siteDescription,
+    },
+  };
 }
 
 export default async function HomePage({ params }: Props) {

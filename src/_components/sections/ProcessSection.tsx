@@ -16,8 +16,10 @@ export function ProcessSection({ t }: Props) {
             <li key={step.label} className={styles.step}>
               <div className={styles.stepNum}>{i + 1}</div>
               <div className={styles.connector} aria-hidden="true" />
-              <p className={styles.stepLabel}>{step.label}</p>
-              <p className={styles.stepDesc}>{step.desc}</p>
+              <div className={styles.stepContent}>
+                <p className={styles.stepLabel}>{step.label}</p>
+                <p className={styles.stepDesc}>{step.desc}</p>
+              </div>
             </li>
           ))}
         </ol>

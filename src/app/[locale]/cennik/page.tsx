@@ -11,7 +11,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: raw } = await params;
   const locale: Locale = isValidLocale(raw) ? raw : defaultLocale;
   const t = getTranslations(locale);
-  return { title: t.pricingPage.h1, description: t.pricingPage.meta };
+  return {
+    title: t.pricingPage.h1,
+    description: t.pricingPage.meta,
+    openGraph: { title: t.pricingPage.h1, description: t.pricingPage.meta },
+    twitter: { title: t.pricingPage.h1, description: t.pricingPage.meta },
+  };
 }
 
 export default async function CennikPage({ params }: Props) {
