@@ -11,7 +11,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: raw } = await params;
   const locale: Locale = isValidLocale(raw) ? raw : defaultLocale;
   const t = getTranslations(locale);
-  return { title: t.wardrobes.h1, description: t.wardrobes.meta };
+  return {
+    title: t.wardrobes.h1,
+    description: t.wardrobes.meta,
+    openGraph: { title: t.wardrobes.h1, description: t.wardrobes.meta },
+    twitter: { title: t.wardrobes.h1, description: t.wardrobes.meta },
+  };
 }
 
 export default async function SzafyPage({ params }: Props) {

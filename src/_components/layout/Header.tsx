@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Translations } from "../../_lib/i18n";
 import type { Locale } from "../../_lib/i18n/config";
 import { getLocalizedPath } from "../../_lib/i18n/config";
@@ -30,16 +30,34 @@ export function Header({ locale, t }: HeaderProps) {
     return pathname === href || pathname.startsWith(`${href}/`);
   }
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    // Always restore on unmount
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  // Close menu on navigation
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${menuOpen ? styles.headerMenuOpen : ""}`}>
       <div className={`container ${styles.inner}`}>
         <Link
           href={getLocalizedPath("/", locale)}
           className={styles.logo}
           aria-label="MA SENS Studio – strona główna"
         >
-          <span className={styles.logoMark}>MA SENS</span>
-          <span className={styles.logoSub}>Studio</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo.svg"
+            alt="MA SENS Studio"
+            className={styles.logoImg}
+          />
         </Link>
 
         <nav

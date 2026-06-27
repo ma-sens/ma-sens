@@ -11,7 +11,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: raw } = await params;
   const locale: Locale = isValidLocale(raw) ? raw : defaultLocale;
   const t = getTranslations(locale);
-  return { title: t.dressing.h1, description: t.dressing.meta };
+  return {
+    title: t.dressing.h1,
+    description: t.dressing.meta,
+    openGraph: { title: t.dressing.h1, description: t.dressing.meta },
+    twitter: { title: t.dressing.h1, description: t.dressing.meta },
+  };
 }
 
 export default async function GarderobyPage({ params }: Props) {

@@ -12,7 +12,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: raw } = await params;
   const locale: Locale = isValidLocale(raw) ? raw : defaultLocale;
   const t = getTranslations(locale);
-  return { title: t.faq.h1, description: t.faq.meta };
+  return {
+    title: t.faq.h1,
+    description: t.faq.meta,
+    openGraph: { title: t.faq.h1, description: t.faq.meta },
+    twitter: { title: t.faq.h1, description: t.faq.meta },
+  };
 }
 
 export default async function FaqPage({ params }: Props) {

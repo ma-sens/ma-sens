@@ -11,7 +11,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: raw } = await params;
   const locale: Locale = isValidLocale(raw) ? raw : defaultLocale;
   const t = getTranslations(locale);
-  return { title: t.kitchens.h1, description: t.kitchens.meta };
+  return {
+    title: t.kitchens.h1,
+    description: t.kitchens.meta,
+    openGraph: { title: t.kitchens.h1, description: t.kitchens.meta },
+    twitter: { title: t.kitchens.h1, description: t.kitchens.meta },
+  };
 }
 
 export default async function KuchniePage({ params }: Props) {

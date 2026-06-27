@@ -11,7 +11,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: raw } = await params;
   const locale: Locale = isValidLocale(raw) ? raw : defaultLocale;
   const t = getTranslations(locale);
-  return { title: t.blog.h1, description: t.blog.meta };
+  return {
+    title: t.blog.h1,
+    description: t.blog.meta,
+    openGraph: { title: t.blog.h1, description: t.blog.meta },
+    twitter: { title: t.blog.h1, description: t.blog.meta },
+  };
 }
 
 export default async function BlogPage({ params }: Props) {

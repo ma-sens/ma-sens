@@ -10,7 +10,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: raw } = await params;
   const locale: Locale = isValidLocale(raw) ? raw : defaultLocale;
   const t = getTranslations(locale);
-  return { title: t.contact.h1, description: t.contact.meta };
+  return {
+    title: t.contact.h1,
+    description: t.contact.meta,
+    openGraph: { title: t.contact.h1, description: t.contact.meta },
+    twitter: { title: t.contact.h1, description: t.contact.meta },
+  };
 }
 
 export default async function KontaktPage({ params }: Props) {

@@ -58,6 +58,11 @@
   max-width: 16ch;
 }
 
+/* Desktop: stepContent is transparent — children already flow in column */
+.stepContent {
+  display: contents;
+}
+
 @media (max-width: 768px) {
   .steps {
     flex-direction: column;
@@ -82,13 +87,22 @@
     height: var(--space-6);
   }
 
-  .stepLabel,
-  .stepDesc {
-    margin-top: 0;
-    max-width: none;
+  /* stepContent becomes a vertical stack on mobile */
+  .stepContent {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    gap: var(--space-1);
+    padding-top: var(--space-1);
   }
 
   .stepLabel {
-    margin-top: var(--space-1);
+    margin-top: 0;
+  }
+
+  .stepDesc {
+    margin-top: 0;
+    max-width: none;
   }
 }
