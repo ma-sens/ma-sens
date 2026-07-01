@@ -110,7 +110,7 @@ export const en: Translations = {
       all: "All",
       kuchnia: "Kitchens",
       garderoba: "Dressing rooms",
-      szafka: "Wardrobes",
+      szafkaRTV: "Wardrobes",
       lazienka: "Bathrooms",
     },
   },

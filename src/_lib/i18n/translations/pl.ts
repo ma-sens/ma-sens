@@ -129,7 +129,7 @@ export const pl: Translations = {
       all: "Wszystkie",
       kuchnia: "Kuchnie",
       garderoba: "Garderoby",
-      szafka: "Szafy",
+      szafkaRTV: "Szafy",
       lazienka: "Łazienki",
     },
   },

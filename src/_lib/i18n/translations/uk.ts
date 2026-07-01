@@ -110,7 +110,7 @@ export const uk: Translations = {
       all: "Всі",
       kuchnia: "Кухні",
       garderoba: "Гардероби",
-      szafka: "Шафи",
+      szafkaRTV: "Шафи",
       lazienka: "Ванні",
     },
   },

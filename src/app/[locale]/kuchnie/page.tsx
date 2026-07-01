@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t.kitchens.h1,
     description: t.kitchens.meta,
-    openGraph: { title: t.kitchens.h1, description: t.kitchens.meta },
-    twitter: { title: t.kitchens.h1, description: t.kitchens.meta },
+    openGraph: { title: t.kitchens.h1, description: t.kitchens.meta, images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "MA SENS Studio" }] },
+    twitter: { card: "summary_large_image", title: t.kitchens.h1, description: t.kitchens.meta, images: ["/og-image.jpg"] },
   };
 }
 
@@ -30,7 +30,7 @@ export default async function KuchniePage({ params }: Props) {
       locale={locale}
       t={t}
       service={t.kitchens}
-      heroImg="/photos/kuchnia1,1.jpg"
+      heroImg="/photos/kuchnia1,1.webp"
       projects={projects}
     />
   );

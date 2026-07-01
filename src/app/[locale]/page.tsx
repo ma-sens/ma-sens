@@ -24,10 +24,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: t.siteTitle,
       description: t.siteDescription,
+      // og:image must be repeated here — Next.js does NOT inherit images from
+      // layout metadata when page-level openGraph is present.
+      images: [
+        {
+          url: "/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: "MA SENS Studio – meble na wymiar Gdańsk",
+        },
+      ],
     },
     twitter: {
+      card: "summary_large_image",
       title: t.siteTitle,
       description: t.siteDescription,
+      images: ["/og-image.jpg"],
     },
   };
 }

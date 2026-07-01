@@ -7,10 +7,10 @@ import { SectionTitle } from "../ui/SectionTitle";
 import styles from "./ServicesSection.module.css";
 
 const SERVICE_IMAGES: Record<string, string> = {
-  kuchnie: "/photos/kuchnia2,1.jpg",
-  szafy: "/photos/szafka4,1.jpg",
-  garderoby: "/photos/garderoba7,1.jpg",
-  "salon-lazienka": "/photos/łazienka1,1.jpg",
+  kuchnie: "/photos/kuchnia2,1.webp",
+  szafy: "/photos/szafkaRTV4,1.webp",
+  garderoby: "/photos/garderoba7,1.webp",
+  "salon-lazienka": "/photos/łazienka1,1.webp",
 };
 
 interface Props {
@@ -33,7 +33,7 @@ export function ServicesSection({ locale, t }: Props) {
             >
               <div className={styles.imgWrapper}>
                 <Image
-                  src={SERVICE_IMAGES[service.slug] ?? "/photos/kuchnia1,1.jpg"}
+                  src={SERVICE_IMAGES[service.slug] ?? "/photos/kuchnia1,1.webp"}
                   alt={service.name}
                   fill
                   sizes="(max-width: 768px) 100vw, 25vw"

@@ -6,9 +6,9 @@ import { getLocalizedPath } from "../../_lib/i18n/config";
 import styles from "./HeroSection.module.css";
 
 const HERO_IMAGES = [
-  "/photos/kuchnia1,1.jpg",
-  "/photos/garderoba8.jpg",
-  "/photos/szafka1,2.jpg",
+  "/photos/kuchnia1,1.webp",
+  "/photos/garderoba1,1.webp",
+  "/photos/szafkaRTV1,2.webp",
 ];
 
 interface Props {
@@ -53,7 +53,7 @@ export function HeroSection({ locale, t }: Props) {
                 src={src}
                 alt={`MA SENS Studio – realizacja ${i + 1}`}
                 fill
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 900px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}
                 priority={i === 0}
               />

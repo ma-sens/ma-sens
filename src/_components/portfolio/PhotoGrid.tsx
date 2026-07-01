@@ -12,7 +12,7 @@ interface Props {
   showFilter?: boolean;
 }
 
-const CATEGORIES: PhotoCategory[] = ["kuchnia", "garderoba", "szafka", "lazienka"];
+const CATEGORIES: PhotoCategory[] = ["kuchnia", "garderoba", "szafkaRTV", "lazienka"];
 
 export function PhotoGrid({ projects, t, showFilter = false }: Props) {
   const [active, setActive] = useState<PhotoCategory | "all">("all");

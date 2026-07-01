@@ -48,7 +48,7 @@ export function ServicePage({ locale, t, service, heroImg, projects }: Props) {
                 src={heroImg}
                 alt={service.h1}
                 fill
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 900px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}
                 priority
               />

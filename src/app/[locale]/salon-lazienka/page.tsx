@@ -25,7 +25,7 @@ export default async function SalonLazienkPage({ params }: Props) {
       locale={locale}
       t={t}
       service={t.living}
-      heroImg="/photos/łazienka1,1.jpg"
+      heroImg="/photos/łazienka1,1.webp"
       projects={projects}
     />
   );

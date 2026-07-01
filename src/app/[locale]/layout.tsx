@@ -20,6 +20,35 @@ const OG_LOCALE: Record<string, string> = {
   uk: "uk_UA",
 };
 
+// LocalBusiness structured data — boosts local SEO signals.
+// Schema is locale-independent (Polish business in Gdańsk).
+const LOCAL_BUSINESS_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "MA SENS Studio",
+  url: "https://masensstudio.pl",
+  image: "https://masensstudio.pl/og-image.jpg",
+  description:
+    "Meble na wymiar w Gdańsku i Trójmieście. Kuchnie, szafy, garderoby, meble łazienkowe.",
+  telephone: "",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Gdańsk",
+    addressRegion: "Pomorskie",
+    addressCountry: "PL",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 54.352,
+    longitude: 18.6466,
+  },
+  areaServed: {
+    "@type": "AdministrativeArea",
+    name: "Trójmiasto",
+  },
+  priceRange: "$$",
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: rawLocale } = await params;
   const locale: Locale = isValidLocale(rawLocale) ? rawLocale : defaultLocale;
@@ -64,6 +93,13 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: static JSON-LD schema, safe
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(LOCAL_BUSINESS_SCHEMA),
+        }}
+      />
       <LangSetter lang={locale} />
       <Header locale={locale} t={t} />
       <main>{children}</main>
@@ -71,3 +107,4 @@ export default async function LocaleLayout({ children, params }: Props) {
     </>
   );
 }
+

@@ -93,7 +93,7 @@ export interface Translations {
       all: string;
       kuchnia: string;
       garderoba: string;
-      szafka: string;
+      szafkaRTV: string;
       lazienka: string;
     };
   };

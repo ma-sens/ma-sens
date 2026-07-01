@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t.pricingPage.h1,
     description: t.pricingPage.meta,
-    openGraph: { title: t.pricingPage.h1, description: t.pricingPage.meta },
-    twitter: { title: t.pricingPage.h1, description: t.pricingPage.meta },
+    openGraph: { title: t.pricingPage.h1, description: t.pricingPage.meta, images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "MA SENS Studio" }] },
+    twitter: { card: "summary_large_image", title: t.pricingPage.h1, description: t.pricingPage.meta, images: ["/og-image.jpg"] },
   };
 }
 
