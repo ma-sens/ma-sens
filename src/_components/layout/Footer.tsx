@@ -95,10 +95,26 @@ export function Footer({ locale, t }: FooterProps) {
       </div>
 
       <div className={styles.bottom}>
-        <div className="container">
+        <div className={`container ${styles.bottomInner}`}>
           <p className={styles.copy}>
             © {currentYear} MA SENS Studio. {t.footer.rights}
           </p>
+          <nav className={styles.legalLinks} aria-label="Legal">
+            <Link
+              href={getLocalizedPath("/regulamin", locale)}
+              className={styles.legalLink}
+              id="footer-terms"
+            >
+              {t.legalPages.termsLabel}
+            </Link>
+            <Link
+              href={getLocalizedPath("/polityka-prywatnosci", locale)}
+              className={styles.legalLink}
+              id="footer-privacy"
+            >
+              {t.legalPages.privacyLabel}
+            </Link>
+          </nav>
         </div>
       </div>
     </footer>

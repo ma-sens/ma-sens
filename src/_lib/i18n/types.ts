@@ -20,6 +20,11 @@ export interface BlogArticle {
   excerpt: string;
 }
 
+export interface LegalSection {
+  title: string;
+  body: readonly string[];
+}
+
 export interface Translations {
   siteTitle: string;
   siteDescription: string;
@@ -201,5 +206,28 @@ export interface Translations {
   partners: {
     title: string;
     subtitle: string;
+  };
+
+  legalPages: {
+    lastUpdated: string;
+    backHome: string;
+    termsLabel: string;
+    privacyLabel: string;
+  };
+
+  termsPage: {
+    h1: string;
+    meta: string;
+    updatedAt: string;
+    intro: string;
+    sections: readonly LegalSection[];
+  };
+
+  privacyPage: {
+    h1: string;
+    meta: string;
+    updatedAt: string;
+    intro: string;
+    sections: readonly LegalSection[];
   };
 }

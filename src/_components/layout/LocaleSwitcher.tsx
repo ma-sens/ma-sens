@@ -40,7 +40,7 @@ export function LocaleSwitcher({ currentLocale }: Props) {
   }
 
   return (
-    <nav className={styles.switcher} aria-label="Language switcher">
+    <nav className={styles.switcher} aria-label="Language switcher" data-lang-switcher>
       {locales.map((locale) => (
         <button
           key={locale}

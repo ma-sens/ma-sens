@@ -70,9 +70,33 @@
   padding-block: var(--space-6);
 }
 
+.bottomInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
 .copy {
   font-size: var(--text-xs);
   opacity: 0.4;
+}
+
+.legalLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.legalLink {
+  font-size: var(--text-xs);
+  opacity: 0.4;
+  transition: opacity var(--transition-fast);
+}
+
+.legalLink:hover {
+  opacity: 0.8;
 }
 
 @media (max-width: 768px) {

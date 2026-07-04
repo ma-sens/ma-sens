@@ -338,4 +338,146 @@ export const en: Translations = {
     title: "Our Partners",
     subtitle: "We use accessories and materials from top global manufacturers:",
   },
+
+  legalPages: {
+    lastUpdated: "Last updated",
+    backHome: "Back to home",
+    termsLabel: "Terms of Use",
+    privacyLabel: "Privacy Policy",
+  },
+
+  termsPage: {
+    h1: "Terms of Use – MA SENS Studio",
+    meta: "Terms of use for the MA SENS Studio website.",
+    updatedAt: "1 July 2025",
+    intro:
+      "These terms of use govern your access to and use of the website available at masensstudio.pl, operated by MA SENS Studio based in Gdańsk, Poland.",
+    sections: [
+      {
+        title: "§1 General Provisions",
+        body: [
+          "The owner and administrator of this website is MA SENS Studio, operating in Gdańsk and the Tri-City area.",
+          "Use of this website is voluntary and free of charge.",
+          "By using this website, you accept these terms of use.",
+          "The website serves exclusively informational purposes and presents the company's service offer.",
+        ],
+      },
+      {
+        title: "§2 Scope of Services",
+        body: [
+          "The website allows users to learn about the custom furniture offer of MA SENS Studio.",
+          "Users may contact the company through the website to request a quote or schedule a measurement.",
+          "MA SENS Studio does not conduct online sales through the website – all services are provided under individual agreements.",
+        ],
+      },
+      {
+        title: "§3 User Rights and Obligations",
+        body: [
+          "Users agree to use the website in accordance with applicable law and good practice.",
+          "Users may not take actions that could disrupt the proper functioning of the website.",
+        ],
+      },
+      {
+        title: "§4 Intellectual Property",
+        body: [
+          "All content published on the website, including texts, photographs, graphics and logos, is the property of MA SENS Studio or its partners and is protected by copyright law.",
+          "Copying, reproducing or using materials without the written consent of the owner is prohibited.",
+        ],
+      },
+      {
+        title: "§5 Liability",
+        body: [
+          "MA SENS Studio makes every effort to ensure that the information on the website is current and accurate.",
+          "The website owner is not liable for temporary unavailability of the website due to technical work or failures.",
+          "Links to external websites do not imply that MA SENS Studio is responsible for their content.",
+        ],
+      },
+      {
+        title: "§6 Final Provisions",
+        body: [
+          "MA SENS Studio reserves the right to amend these terms. Changes take effect on the date of their publication on the website.",
+          "Matters not regulated by these terms are governed by the Polish Civil Code and other applicable Polish legislation.",
+          "Any questions regarding these terms should be directed to: masensstudio.gdansk@gmail.com",
+        ],
+      },
+    ],
+  },
+
+  privacyPage: {
+    h1: "Privacy Policy – MA SENS Studio",
+    meta: "Privacy policy and personal data protection at MA SENS Studio.",
+    updatedAt: "1 July 2025",
+    intro:
+      "This privacy policy describes how MA SENS Studio processes the personal data of website visitors and clients.",
+    sections: [
+      {
+        title: "1. Data Controller",
+        body: [
+          "The data controller is MA SENS Studio, operating in Gdańsk, Poland.",
+          "Contact the controller at: masensstudio.gdansk@gmail.com or by phone: +48 510 593 773.",
+        ],
+      },
+      {
+        title: "2. Data We Collect",
+        body: [
+          "Data voluntarily provided by the user via contact forms or email (name, email address, phone number).",
+          "Technical data collected automatically: IP address, browser type, visit time – for statistical purposes.",
+          "Data required to perform the service: home address or installation address.",
+        ],
+      },
+      {
+        title: "3. Purpose and Legal Basis",
+        body: [
+          "Responding to enquiries and conducting correspondence (Art. 6(1)(b) GDPR – necessary for the performance of a contract or pre-contractual steps).",
+          "Providing services, including measurements and furniture installation (Art. 6(1)(b) GDPR).",
+          "Website traffic analysis for statistical purposes (Art. 6(1)(f) GDPR – legitimate interest).",
+        ],
+      },
+      {
+        title: "4. Data Retention",
+        body: [
+          "Contact data is retained for as long as necessary to complete the service or until consent is withdrawn.",
+          "Client data arising from contracts is retained for the period required by law (up to 5 years from the end of the tax year).",
+          "Statistical data is collected anonymously and cannot be used to identify specific individuals.",
+        ],
+      },
+      {
+        title: "5. Your Rights",
+        body: [
+          "Right of access – you may request information about your processed data.",
+          "Right to rectification – you may request correction of inaccurate or incomplete data.",
+          "Right to erasure – you may request deletion of data where there is no legal basis for further processing.",
+          "Right to restriction – you may request restriction of processing in certain circumstances.",
+          "Right to data portability – you may receive your data in a structured format.",
+          "Right to object – you may object to processing based on legitimate interest.",
+          "To exercise any of these rights, contact us at: masensstudio.gdansk@gmail.com",
+        ],
+      },
+      {
+        title: "6. Cookies",
+        body: [
+          "The website may use cookies for statistical and functional purposes.",
+          "Essential cookies ensure the proper functioning of the website.",
+          "Analytical cookies help us understand how the website is used (you may disable them in your browser settings).",
+          "You may change your browser's cookie settings or delete stored cookies at any time.",
+        ],
+      },
+      {
+        title: "7. Data Sharing",
+        body: [
+          "Personal data is not sold or shared with third parties for marketing purposes.",
+          "We may share data with providers of the website's technical infrastructure (e.g. hosting), solely to the extent necessary to provide services.",
+          "In cases provided for by law, data may be shared with public authorities.",
+        ],
+      },
+      {
+        title: "8. Changes to This Policy",
+        body: [
+          "MA SENS Studio reserves the right to amend this privacy policy.",
+          "We will notify users of any changes by updating this page.",
+          "For questions regarding data protection, please contact us at: masensstudio.gdansk@gmail.com",
+        ],
+      },
+    ],
+  },
 };

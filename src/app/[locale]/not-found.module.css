@@ -1,0 +1,110 @@
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding-block: var(--space-20);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-8);
+  max-width: 560px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+/* Big 404 number */
+.code {
+  font-size: clamp(6rem, 18vw, 10rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: var(--color-accent);
+  user-select: none;
+}
+
+/* Divider accent line */
+.divider {
+  width: 48px;
+  height: 2px;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-fg);
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+  margin-top: var(--space-2);
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-bg);
+  background-color: var(--color-fg);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-base),
+    transform var(--transition-fast);
+}
+
+.btnPrimary:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.btnSecondary:hover {
+  color: var(--color-fg);
+  border-color: var(--color-fg);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 480px) {
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    justify-content: center;
+  }
+}

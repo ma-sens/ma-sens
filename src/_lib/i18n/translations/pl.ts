@@ -386,4 +386,146 @@ export const pl: Translations = {
     subtitle:
       "Współpracujemy z wiodącymi światowymi producentami materiałów i okuć:",
   },
+
+  legalPages: {
+    lastUpdated: "Ostatnia aktualizacja",
+    backHome: "Powrót na stronę główną",
+    termsLabel: "Regulamin",
+    privacyLabel: "Polityka prywatności",
+  },
+
+  termsPage: {
+    h1: "Regulamin serwisu – MA SENS Studio",
+    meta: "Regulamin korzystania z serwisu internetowego MA SENS Studio.",
+    updatedAt: "1 lipca 2025",
+    intro:
+      "Niniejszy regulamin określa zasady korzystania z serwisu internetowego dostępnego pod adresem masensstudio.pl, prowadzonego przez MA SENS Studio z siedzibą w Gdańsku.",
+    sections: [
+      {
+        title: "§1 Postanowienia ogólne",
+        body: [
+          "Właścicielem i administratorem serwisu jest MA SENS Studio, prowadzący działalność na terenie Gdańska i Trójmiasta.",
+          "Korzystanie z serwisu jest dobrowolne i bezpłatne.",
+          "Użytkownik korzystający z serwisu akceptuje niniejszy regulamin.",
+          "Serwis służy wyłącznie celom informacyjnym i prezentacji oferty usług.",
+        ],
+      },
+      {
+        title: "§2 Zakres usług",
+        body: [
+          "Serwis umożliwia zapoznanie się z ofertą mebli na wymiar MA SENS Studio.",
+          "Za pośrednictwem serwisu można skontaktować się z firmą w celu uzyskania wyceny lub umówienia pomiaru.",
+          "MA SENS Studio nie prowadzi sprzedaży online przez serwis – wszelkie usługi realizowane są na podstawie indywidualnych umów.",
+        ],
+      },
+      {
+        title: "§3 Prawa i obowiązki użytkownika",
+        body: [
+          "Użytkownik zobowiązuje się do korzystania z serwisu zgodnie z obowiązującym prawem i dobrymi obyczajami.",
+          "Użytkownik nie może podejmować działań mogących zakłócić prawidłowe funkcjonowanie serwisu.",
+        ],
+      },
+      {
+        title: "§4 Własność intelektualna",
+        body: [
+          "Wszelkie treści zamieszczone w serwisie, w tym teksty, zdjęcia, grafiki i logotypy, są własnością MA SENS Studio lub podmiotów współpracujących i podlegają ochronie prawa autorskiego.",
+          "Kopiowanie, powielanie lub wykorzystywanie materiałów bez pisemnej zgody właściciela jest zabronione.",
+        ],
+      },
+      {
+        title: "§5 Odpowiedzialność",
+        body: [
+          "MA SENS Studio dokłada wszelkich starań, aby informacje zamieszczone w serwisie były aktualne i rzetelne.",
+          "Właściciel serwisu nie ponosi odpowiedzialności za czasową niedostępność serwisu wynikającą z prac technicznych lub awarii.",
+          "Linki do zewnętrznych serwisów zamieszczone w serwisie nie oznaczają, że MA SENS Studio odpowiada za ich treść.",
+        ],
+      },
+      {
+        title: "§6 Postanowienia końcowe",
+        body: [
+          "MA SENS Studio zastrzega sobie prawo do zmiany regulaminu. Zmiany wchodzą w życie z dniem ich publikacji w serwisie.",
+          "W sprawach nieuregulowanych niniejszym regulaminem zastosowanie mają przepisy Kodeksu Cywilnego oraz innych ustaw obowiązujących na terenie Rzeczypospolitej Polskiej.",
+          "Wszelkie pytania dotyczące regulaminu prosimy kierować na adres: masensstudio.gdansk@gmail.com",
+        ],
+      },
+    ],
+  },
+
+  privacyPage: {
+    h1: "Polityka prywatności – MA SENS Studio",
+    meta: "Polityka prywatności i ochrony danych osobowych MA SENS Studio.",
+    updatedAt: "1 lipca 2025",
+    intro:
+      "Niniejsza polityka prywatności opisuje, w jaki sposób MA SENS Studio przetwarza dane osobowe użytkowników serwisu masensstudio.pl oraz klientów firmy.",
+    sections: [
+      {
+        title: "1. Administrator danych",
+        body: [
+          "Administratorem danych osobowych jest MA SENS Studio, prowadzący działalność w Gdańsku.",
+          "Kontakt z administratorem: masensstudio.gdansk@gmail.com lub telefonicznie: +48 510 593 773.",
+        ],
+      },
+      {
+        title: "2. Jakie dane zbieramy",
+        body: [
+          "Dane przekazywane dobrowolnie przez użytkownika za pośrednictwem formularzy kontaktowych lub wiadomości e-mail (imię, adres e-mail, numer telefonu).",
+          "Dane techniczne zbierane automatycznie: adres IP, typ przeglądarki, czas odwiedzin – w celach statystycznych.",
+          "Dane niezbędne do realizacji usługi: adres zamieszkania lub adres realizacji montażu.",
+        ],
+      },
+      {
+        title: "3. Cel i podstawa przetwarzania",
+        body: [
+          "Odpowiedź na zapytania ofertowe i prowadzenie korespondencji (art. 6 ust. 1 lit. b RODO – niezbędność do wykonania umowy lub podjęcia działań przed jej zawarciem).",
+          "Realizacja usług, w tym wykonanie pomiarów i montażu mebli (art. 6 ust. 1 lit. b RODO).",
+          "Prowadzenie analiz ruchu na stronie w celach statystycznych (art. 6 ust. 1 lit. f RODO – uzasadniony interes).",
+        ],
+      },
+      {
+        title: "4. Okres przechowywania danych",
+        body: [
+          "Dane kontaktowe przechowujemy przez czas niezbędny do realizacji usługi lub do momentu wycofania zgody.",
+          "Dane klientów wynikające z realizacji umów przechowujemy przez okres wymagany przepisami prawa (do 5 lat od zakończenia roku podatkowego).",
+          "Dane statystyczne są zbierane w sposób zanonimizowany i nie pozwalają na identyfikację konkretnych osób.",
+        ],
+      },
+      {
+        title: "5. Prawa użytkownika",
+        body: [
+          "Prawo dostępu do danych – możesz poprosić o informację o przetwarzanych danych.",
+          "Prawo do sprostowania – możesz żądać poprawienia nieprawidłowych lub niekompletnych danych.",
+          "Prawo do usunięcia – możesz żądać usunięcia danych (jeśli nie ma podstawy prawnej do ich dalszego przetwarzania).",
+          "Prawo do ograniczenia przetwarzania – możesz żądać ograniczenia przetwarzania w określonych sytuacjach.",
+          "Prawo do przenoszenia danych – możesz otrzymać dane w ustrukturyzowanym formacie.",
+          "Prawo do sprzeciwu – możesz sprzeciwić się przetwarzaniu opartemu na uzasadnionym interesie.",
+          "Aby skorzystać z powyższych praw, skontaktuj się z nami na adres: masensstudio.gdansk@gmail.com",
+        ],
+      },
+      {
+        title: "6. Pliki cookies",
+        body: [
+          "Serwis może wykorzystywać pliki cookies (ciasteczka) do celów statystycznych i funkcjonalnych.",
+          "Cookies niezbędne zapewniają prawidłowe działanie serwisu.",
+          "Cookies analityczne pomagają nam zrozumieć sposób korzystania z serwisu (możesz je wyłączyć w ustawieniach przeglądarki).",
+          "Możesz w każdej chwili zmienić ustawienia przeglądarki dotyczące cookies lub usunąć już zapisane pliki.",
+        ],
+      },
+      {
+        title: "7. Udostępnianie danych",
+        body: [
+          "Dane osobowe nie są sprzedawane ani udostępniane podmiotom trzecim w celach marketingowych.",
+          "Możemy udostępniać dane podmiotom obsługującym infrastrukturę techniczną serwisu (np. hosting), wyłącznie w zakresie niezbędnym do świadczenia usług.",
+          "W przypadkach przewidzianych prawem dane mogą być udostępniane organom państwowym.",
+        ],
+      },
+      {
+        title: "8. Zmiany polityki prywatności",
+        body: [
+          "MA SENS Studio zastrzega sobie prawo do zmiany niniejszej polityki prywatności.",
+          "O wszelkich zmianach poinformujemy poprzez aktualizację treści na tej stronie.",
+          "W razie pytań dotyczących ochrony danych osobowych prosimy o kontakt: masensstudio.gdansk@gmail.com",
+        ],
+      },
+    ],
+  },
 };

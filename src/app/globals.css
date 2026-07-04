@@ -172,3 +172,9 @@ button {
   outline-offset: 3px;
   border-radius: var(--radius-sm);
 }
+
+/* ── Page-level overrides ── */
+/* Hide language switcher on pages that set data-hide-lang on <html> (e.g. 404) */
+[data-hide-lang="true"] [data-lang-switcher] {
+  display: none;
+}

@@ -12,9 +12,10 @@ import { LocaleSwitcher } from "./LocaleSwitcher";
 interface HeaderProps {
   locale: Locale;
   t: Translations;
+  hideLangSwitcher?: boolean;
 }
 
-export function Header({ locale, t }: HeaderProps) {
+export function Header({ locale, t, hideLangSwitcher = false }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
@@ -103,7 +104,7 @@ export function Header({ locale, t }: HeaderProps) {
         </nav>
 
         <div className={styles.actions}>
-          <LocaleSwitcher currentLocale={locale} />
+          {!hideLangSwitcher && <LocaleSwitcher currentLocale={locale} />}
           <button
             type="button"
             className={styles.burger}

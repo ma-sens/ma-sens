@@ -11,7 +11,7 @@ interface Props {
   params: Promise<{ locale: string }>;
 }
 
-const BASE_URL = "https://masens.pl";
+const BASE_URL = "https://masensstudio.pl";
 
 // Maps locale → Open Graph locale string
 const OG_LOCALE: Record<string, string> = {
