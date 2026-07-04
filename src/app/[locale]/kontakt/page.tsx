@@ -34,14 +34,14 @@ export default async function KontaktPage({ params }: Props) {
             <div className={styles.details}>
               <div className={styles.detailRow}>
                 <span className={styles.detailLabel}>{c.phone}</span>
-                <a href="tel:+48000000000" className={styles.detailValue} id="contact-phone">
-                  +48 000 000 000
+                <a href="tel:+48510593773" className={styles.detailValue} id="contact-phone">
+                  +48 510 593 773
                 </a>
               </div>
               <div className={styles.detailRow}>
                 <span className={styles.detailLabel}>{c.email}</span>
-                <a href="mailto:kontakt@masens.pl" className={styles.detailValue} id="contact-email">
-                  kontakt@masens.pl
+                <a href="mailto:masensstudio.gdansk@gmail.com" className={styles.detailValue} id="contact-email">
+                  masensstudio.gdansk@gmail.com
                 </a>
               </div>
               <div className={styles.detailRow}>
@@ -55,10 +55,10 @@ export default async function KontaktPage({ params }: Props) {
             <h2 className={styles.cardTitle}>{t.cta.freeQuote}</h2>
             <p className={styles.cardText}>{t.summary.ctaDesc}</p>
             <div className={styles.cardActions}>
-              <a href="tel:+48000000000" className={styles.btnPrimary} id="contact-cta-call">
+              <a href="tel:+48510593773" className={styles.btnPrimary} id="contact-cta-call">
                 {t.cta.bookMeasure}
               </a>
-              <a href="mailto:kontakt@masens.pl" className={styles.btnSecondary} id="contact-cta-email">
+              <a href="mailto:masensstudio.gdansk@gmail.com" className={styles.btnSecondary} id="contact-cta-email">
                 {t.cta.writeUs}
               </a>
             </div>

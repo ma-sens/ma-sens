@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Translations } from "../../_lib/i18n";
 import type { Locale } from "../../_lib/i18n/config";
 import { getLocalizedPath } from "../../_lib/i18n/config";
@@ -30,12 +30,30 @@ export function Header({ locale, t }: HeaderProps) {
     return pathname === href || pathname.startsWith(`${href}/`);
   }
 
-  // Lock body scroll when mobile menu is open
+  // Ref stores scroll position so cleanup race-condition can't clear it before restore
+  const savedScrollY = useRef(0);
+
+  // Lock body scroll when mobile menu is open (iOS-safe: position:fixed technique)
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-    // Always restore on unmount
+    if (menuOpen) {
+      savedScrollY.current = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${savedScrollY.current}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+    } else {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      window.scrollTo({ top: savedScrollY.current, behavior: "instant" });
+    }
+    // Cleanup on unmount only — restore without jump if component tears down while open
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
     };
   }, [menuOpen]);
 
