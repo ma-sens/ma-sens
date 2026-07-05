@@ -21,7 +21,7 @@
   color: var(--color-bg);
 }
 
-.cardAccent :global(.section-title-title) {
+.cardAccent h2 {
   color: var(--color-bg);
 }
 

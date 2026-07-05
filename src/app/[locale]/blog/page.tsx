@@ -5,7 +5,9 @@ import { getTranslations } from "../../../_lib/i18n";
 import { CtaSection } from "../../../_components/sections/CtaSection";
 import styles from "./page.module.css";
 
-interface Props { params: Promise<{ locale: string }> }
+interface Props {
+  params: Promise<{ locale: string }>;
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: raw } = await params;
@@ -14,8 +16,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t.blog.h1,
     description: t.blog.meta,
-    openGraph: { title: t.blog.h1, description: t.blog.meta, images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "MA SENS Studio" }] },
-    twitter: { card: "summary_large_image", title: t.blog.h1, description: t.blog.meta, images: ["/og-image.jpg"] },
+    openGraph: {
+      title: t.blog.h1,
+      description: t.blog.meta,
+      images: [
+        {
+          url: "/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: "MA SENS Studio",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t.blog.h1,
+      description: t.blog.meta,
+      images: ["/og-image.jpg"],
+    },
   };
 }
 

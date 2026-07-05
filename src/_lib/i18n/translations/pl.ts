@@ -2,7 +2,8 @@ import type { Translations } from "../types";
 
 export const pl: Translations = {
   // Meta / SEO
-  siteTitle: "MA SENS Studio – Meble na wymiar Gdańsk",
+  siteTitle:
+    "MA SENS Studio – Meble na wymiar Gdańsk | Kuchnie, Szafy, Stolarz",
   siteDescription:
     "Meble na wymiar w Gdańsku i Trójmieście. Kuchnie, szafy, garderoby, meble łazienkowe. Każdy centymetr ma sens.",
 
@@ -41,7 +42,7 @@ export const pl: Translations = {
 
   // Why custom
   whyCustom: {
-    title: "Dlaczego gotowe meble często nie działają?",
+    title: "Dlaczego gotowe meble często się nie sprawdzają?",
     intro:
       "Wielu klientów zaczyna od wizyty w salonach meblowych. Na początku wszystko wygląda prosto. Ale w praktyce pojawiają się kompromisy:",
     issues: [
@@ -212,7 +213,7 @@ export const pl: Translations = {
       "Wygodny i logiczny system przechowywania",
       "Estetyczne dopasowanie do wnętrza",
     ],
-    meta: "Szafy i zabudowy wnęk na wymiar w Gdańsku – dopasowane do każdego kształtu pomieszczenia.",
+    meta: "Szafy na wymiar, szafy przesuwne i zabudowy wnęk w Gdańsku – dopasowane do każdego kształtu pomieszczenia.",
   },
 
   // Dressing room page
@@ -288,7 +289,7 @@ export const pl: Translations = {
     localDesc:
       "Działamy lokalnie, co pozwala nam szybko reagować i dokładnie dopasować projekt do warunków mieszkania.",
     cities: ["Gdańsk", "Sopot", "Gdynia", "Okolice Trójmiasta"],
-    meta: "O nas – MA SENS Studio, producent mebli na wymiar z Gdańska.",
+    meta: "O nas – MA SENS Studio, nowoczesne usługi stolarskie i meble na wymiar z Gdańska.",
   },
 
   // FAQ page
@@ -317,7 +318,7 @@ export const pl: Translations = {
       },
       {
         q: "Jakie meble wykonujecie?",
-        a: "Specjalizujemy się w kuchniach na wymiar, szafach wnękowych, garderobach, meblach łazienkowych i zabudowach indywidualnych.",
+        a: "Specjalizujemy się w kuchniach na wymiar, szafach wnękowych i przesuwnych, garderobach oraz meblach łazienkowych. Wykonujemy również inne meble na zamówienie do każdego wnętrza.",
       },
       {
         q: "Czy mogę wybrać materiały i kolory?",

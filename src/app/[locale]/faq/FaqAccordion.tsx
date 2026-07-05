@@ -23,7 +23,10 @@ export function FaqAccordion({ items }: Props) {
             id={`faq-q-${i}`}
           >
             <span>{item.q}</span>
-            <span className={styles.icon} aria-hidden="true">{open === i ? "−" : "+"}</span>
+            <span className={styles.iconWrapper} aria-hidden="true">
+              <span className={styles.iconHorizontal}></span>
+              <span className={styles.iconVertical}></span>
+            </span>
           </button>
           {open === i && (
             <div className={styles.answer} role="region" aria-labelledby={`faq-q-${i}`}>
