@@ -393,6 +393,39 @@ export const pl: Translations = {
     backHome: "Powrót na stronę główną",
     termsLabel: "Regulamin",
     privacyLabel: "Polityka prywatności",
+    manageCookies: "Ustawienia cookies",
+  },
+
+  cookieConsent: {
+    title: "Szanujemy Twoją prywatność",
+    description:
+      "Używamy plików cookie i pokrewnych technologii, aby zapewnić prawidłowe działanie strony, analizować ruch (Google Analytics) oraz personalizować treści. Możesz zaakceptować wszystkie pliki cookie lub dostosować swoje preferencje.",
+    learnMorePrefix: "Więcej informacji znajdziesz w naszej",
+    privacyPolicyLink: "Polityce prywatności",
+    acceptAll: "Zaakceptuj wszystkie",
+    rejectAll: "Tylko niezbędne",
+    customize: "Dostosuj preferencje",
+    savePreferences: "Zapisz wybór",
+    close: "Zamknij",
+
+    categories: {
+      necessary: {
+        title: "Niezbędne pliki cookie",
+        description:
+          "Wymagane do prawidłowego funkcjonowania serwisu, nawigacji oraz zapamiętania Twoich wyborów prywatności. Nie można ich wyłączyć.",
+        alwaysActive: "Zawsze aktywne",
+      },
+      analytics: {
+        title: "Analityczne pliki cookie",
+        description:
+          "Pomagają nam zrozumieć, jak użytkownicy korzystają ze strony (Google Analytics / GTM), co pozwala stale ulepszać jej strukturę i ofertę.",
+      },
+      marketing: {
+        title: "Marketingowe pliki cookie",
+        description:
+          "Służą do mierzenia skuteczności działań reklamowych i dopasowywania komunikatów promocyjnych do Twoich zainteresowań.",
+      },
+    },
   },
 
   termsPage: {
@@ -479,7 +512,8 @@ export const pl: Translations = {
         body: [
           "Odpowiedź na zapytania ofertowe i prowadzenie korespondencji (art. 6 ust. 1 lit. b RODO – niezbędność do wykonania umowy lub podjęcia działań przed jej zawarciem).",
           "Realizacja usług, w tym wykonanie pomiarów i montażu mebli (art. 6 ust. 1 lit. b RODO).",
-          "Prowadzenie analiz ruchu na stronie w celach statystycznych (art. 6 ust. 1 lit. f RODO – uzasadniony interes).",
+          "Prowadzenie analityki i statystyk odwiedzin serwisu za pomocą Google Analytics (art. 6 ust. 1 lit. a RODO – dobrowolna zgoda użytkownika wyrażona w banerze cookies).",
+          "Zapewnienie bezpieczeństwa i prawidłowego działania serwisu (art. 6 ust. 1 lit. f RODO – prawnie uzasadniony interes administratora).",
         ],
       },
       {
@@ -487,7 +521,7 @@ export const pl: Translations = {
         body: [
           "Dane kontaktowe przechowujemy przez czas niezbędny do realizacji usługi lub do momentu wycofania zgody.",
           "Dane klientów wynikające z realizacji umów przechowujemy przez okres wymagany przepisami prawa (do 5 lat od zakończenia roku podatkowego).",
-          "Dane statystyczne są zbierane w sposób zanonimizowany i nie pozwalają na identyfikację konkretnych osób.",
+          "Dane statystyczne i analityczne przetwarzane są zgodnie z ustawieniami retencji Google Analytics oraz do czasu wycofania zgody.",
         ],
       },
       {
@@ -499,24 +533,26 @@ export const pl: Translations = {
           "Prawo do ograniczenia przetwarzania – możesz żądać ograniczenia przetwarzania w określonych sytuacjach.",
           "Prawo do przenoszenia danych – możesz otrzymać dane w ustrukturyzowanym formacie.",
           "Prawo do sprzeciwu – możesz sprzeciwić się przetwarzaniu opartemu na uzasadnionym interesie.",
+          "Prawo do wycofania zgody – w dowolnym momencie w zakresie, w jakim dane przetwarzane są na podstawie zgody (np. cookies analityczne), bez wpływu na zgodność z prawem przetwarzania przed jej wycofaniem.",
           "Aby skorzystać z powyższych praw, skontaktuj się z nami na adres: masensstudio.gdansk@gmail.com",
         ],
       },
       {
-        title: "6. Pliki cookies",
+        title: "6. Pliki cookies i Google Analytics",
         body: [
-          "Serwis może wykorzystywać pliki cookies (ciasteczka) do celów statystycznych i funkcjonalnych.",
-          "Cookies niezbędne zapewniają prawidłowe działanie serwisu.",
-          "Cookies analityczne pomagają nam zrozumieć sposób korzystania z serwisu (możesz je wyłączyć w ustawieniach przeglądarki).",
-          "Możesz w każdej chwili zmienić ustawienia przeglądarki dotyczące cookies lub usunąć już zapisane pliki.",
+          "Serwis masensstudio.pl wykorzystuje pliki cookies (ciasteczka) oraz narzędzia analityczne (Google Tag Manager, Google Analytics dostarczane przez Google Ireland Limited).",
+          "Cookies niezbędne (techniczne): zapewniają prawidłowe działanie serwisu, nawigację oraz zapamiętanie wyborów dotyczących prywatności. Są aktywne zawsze (art. 6 ust. 1 lit. f RODO).",
+          "Cookies analityczne i marketingowe: zbierają informacje o sposobie korzystania ze strony. Są uruchamiane wyłącznie po wyrażeniu przez Ciebie dobrowolnej zgody w banerze cookies (art. 6 ust. 1 lit. a RODO).",
+          "Stosujemy standard Google Consent Mode v2, który blokuje aktywację analitycznych plików cookie do momentu udzielenia wyraźnej zgody.",
+          "W każdej chwili możesz zmienić swoje preferencje lub wycofać zgodę, klikając link 'Ustawienia cookies' w stopce strony lub zmieniając ustawienia w swojej przeglądarce.",
         ],
       },
       {
         title: "7. Udostępnianie danych",
         body: [
-          "Dane osobowe nie są sprzedawane ani udostępniane podmiotom trzecim w celach marketingowych.",
-          "Możemy udostępniać dane podmiotom obsługującym infrastrukturę techniczną serwisu (np. hosting), wyłącznie w zakresie niezbędnym do świadczenia usług.",
-          "W przypadkach przewidzianych prawem dane mogą być udostępniane organom państwowym.",
+          "Dane osobowe nie są sprzedawane podmiotom trzecim.",
+          "Dane mogą być przekazywane dostawcom usług IT, hostingu oraz narzędzi analitycznych (Google Ireland Limited) wyłącznie w zakresie niezbędnym do funkcjonowania serwisu i w zgodzie z RODO.",
+          "W przypadkach przewidzianych prawem dane mogą być udostępniane uprawnionym organom państwowym.",
         ],
       },
       {
@@ -530,3 +566,4 @@ export const pl: Translations = {
     ],
   },
 };
+

@@ -344,6 +344,39 @@ export const en: Translations = {
     backHome: "Back to home",
     termsLabel: "Terms of Use",
     privacyLabel: "Privacy Policy",
+    manageCookies: "Cookie Settings",
+  },
+
+  cookieConsent: {
+    title: "We value your privacy",
+    description:
+      "We use cookies and related technologies to ensure the proper operation of the website, analyze traffic (Google Analytics), and personalize content. You can accept all cookies or adjust your preferences.",
+    learnMorePrefix: "For more information, please see our",
+    privacyPolicyLink: "Privacy Policy",
+    acceptAll: "Accept all",
+    rejectAll: "Essential only",
+    customize: "Customize preferences",
+    savePreferences: "Save preferences",
+    close: "Close",
+
+    categories: {
+      necessary: {
+        title: "Essential cookies",
+        description:
+          "Required for the core functionality of the website, navigation, and remembering your privacy choices. These cannot be disabled.",
+        alwaysActive: "Always active",
+      },
+      analytics: {
+        title: "Analytics cookies",
+        description:
+          "Help us understand how visitors interact with our website (Google Analytics / GTM) to continuously improve our services and user experience.",
+      },
+      marketing: {
+        title: "Marketing cookies",
+        description:
+          "Used to measure advertising performance and deliver relevant promotional messages based on your interests.",
+      },
+    },
   },
 
   termsPage: {
@@ -430,7 +463,8 @@ export const en: Translations = {
         body: [
           "Responding to enquiries and conducting correspondence (Art. 6(1)(b) GDPR – necessary for the performance of a contract or pre-contractual steps).",
           "Providing services, including measurements and furniture installation (Art. 6(1)(b) GDPR).",
-          "Website traffic analysis for statistical purposes (Art. 6(1)(f) GDPR – legitimate interest).",
+          "Website traffic analysis and statistics via Google Analytics (Art. 6(1)(a) GDPR – user's voluntary consent given in the cookie banner).",
+          "Ensuring security and proper website performance (Art. 6(1)(f) GDPR – legitimate interest of the controller).",
         ],
       },
       {
@@ -438,7 +472,7 @@ export const en: Translations = {
         body: [
           "Contact data is retained for as long as necessary to complete the service or until consent is withdrawn.",
           "Client data arising from contracts is retained for the period required by law (up to 5 years from the end of the tax year).",
-          "Statistical data is collected anonymously and cannot be used to identify specific individuals.",
+          "Statistical and analytical data is retained according to Google Analytics retention settings or until consent is withdrawn.",
         ],
       },
       {
@@ -450,23 +484,25 @@ export const en: Translations = {
           "Right to restriction – you may request restriction of processing in certain circumstances.",
           "Right to data portability – you may receive your data in a structured format.",
           "Right to object – you may object to processing based on legitimate interest.",
+          "Right to withdraw consent – at any time where processing is based on consent (such as analytical cookies), without affecting the lawfulness of processing before withdrawal.",
           "To exercise any of these rights, contact us at: masensstudio.gdansk@gmail.com",
         ],
       },
       {
-        title: "6. Cookies",
+        title: "6. Cookies & Google Analytics",
         body: [
-          "The website may use cookies for statistical and functional purposes.",
-          "Essential cookies ensure the proper functioning of the website.",
-          "Analytical cookies help us understand how the website is used (you may disable them in your browser settings).",
-          "You may change your browser's cookie settings or delete stored cookies at any time.",
+          "The masensstudio.pl website uses cookies and analytics tools (Google Tag Manager, Google Analytics provided by Google Ireland Limited).",
+          "Essential (technical) cookies: ensure the proper operation of the website, navigation, and remembering your privacy choices. These are always active (Art. 6(1)(f) GDPR).",
+          "Analytics and marketing cookies: help us understand how users interact with the site. These are enabled only after you give explicit, voluntary consent in the cookie banner (Art. 6(1)(a) GDPR).",
+          "We implement Google Consent Mode v2, which prevents tracking cookies from being placed until user consent is granted.",
+          "You may change your preferences or withdraw your consent at any time by clicking the 'Cookie Settings' link in the footer or in your browser settings.",
         ],
       },
       {
         title: "7. Data Sharing",
         body: [
-          "Personal data is not sold or shared with third parties for marketing purposes.",
-          "We may share data with providers of the website's technical infrastructure (e.g. hosting), solely to the extent necessary to provide services.",
+          "Personal data is not sold to third parties.",
+          "Data may be shared with IT infrastructure, hosting, and analytics tool providers (Google Ireland Limited) strictly to the extent required to operate the service and in compliance with GDPR.",
           "In cases provided for by law, data may be shared with public authorities.",
         ],
       },
@@ -481,3 +517,4 @@ export const en: Translations = {
     ],
   },
 };
+

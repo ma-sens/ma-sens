@@ -5,11 +5,13 @@ import { getTranslations } from "../../_lib/i18n";
 import { Header } from "../../_components/layout/Header";
 import { Footer } from "../../_components/layout/Footer";
 import { LangSetter } from "../../_components/layout/LangSetter";
+import { CookieConsentBanner } from "../../_components/consent/CookieConsentBanner";
 
 interface Props {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }
+
 
 const BASE_URL = "https://masensstudio.pl";
 
@@ -104,7 +106,9 @@ export default async function LocaleLayout({ children, params }: Props) {
       <Header locale={locale} t={t} />
       <main>{children}</main>
       <Footer locale={locale} t={t} />
+      <CookieConsentBanner locale={locale} t={t.cookieConsent} />
     </>
   );
 }
+
 

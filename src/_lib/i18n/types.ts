@@ -213,6 +213,35 @@ export interface Translations {
     backHome: string;
     termsLabel: string;
     privacyLabel: string;
+    manageCookies: string;
+  };
+
+  cookieConsent: {
+    title: string;
+    description: string;
+    learnMorePrefix: string;
+    privacyPolicyLink: string;
+    acceptAll: string;
+    rejectAll: string;
+    customize: string;
+    savePreferences: string;
+    close: string;
+
+    categories: {
+      necessary: {
+        title: string;
+        description: string;
+        alwaysActive: string;
+      };
+      analytics: {
+        title: string;
+        description: string;
+      };
+      marketing: {
+        title: string;
+        description: string;
+      };
+    };
   };
 
   termsPage: {
@@ -231,3 +260,4 @@ export interface Translations {
     sections: readonly LegalSection[];
   };
 }
+

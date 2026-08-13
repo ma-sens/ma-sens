@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Translations } from "../../_lib/i18n";
 import type { Locale } from "../../_lib/i18n/config";
 import { getLocalizedPath } from "../../_lib/i18n/config";
+import { CookieSettingsButton } from "../consent/CookieSettingsButton";
 import styles from "./Footer.module.css";
 
 interface FooterProps {
@@ -114,9 +115,14 @@ export function Footer({ locale, t }: FooterProps) {
             >
               {t.legalPages.privacyLabel}
             </Link>
+            <CookieSettingsButton
+              label={t.legalPages.manageCookies}
+              className={styles.legalLink}
+            />
           </nav>
         </div>
       </div>
     </footer>
   );
 }
+

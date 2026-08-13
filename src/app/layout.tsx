@@ -1,5 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import {
+  GoogleTagManagerHead,
+  GoogleTagManagerNoScript,
+} from "../_components/analytics/GoogleTagManager";
 
 // next/font/google self-hosts Inter at build time — eliminates the
 // render-blocking external Google Fonts request that was hurting FCP/LCP.
@@ -16,8 +20,17 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
+    // biome-ignore lint/a11y/useHtmlLang: lang is set dynamically by LangSetter component in [locale]/layout.tsx
     <html suppressHydrationWarning className={inter.variable}>
-      <body suppressHydrationWarning>{children}</body>
+      <head>
+        <GoogleTagManagerHead />
+      </head>
+      <body suppressHydrationWarning>
+        <GoogleTagManagerNoScript />
+        {children}
+      </body>
     </html>
   );
 }
+
+
