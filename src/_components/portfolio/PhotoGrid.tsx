@@ -14,7 +14,23 @@ interface Props {
 
 const CATEGORIES: PhotoCategory[] = ["kuchnia", "garderoba", "szafkaRTV", "lazienka"];
 
+const CATEGORY_NAMES: Record<PhotoCategory, string> = {
+  kuchnia: "Kuchnia na wymiar Gdańsk",
+  garderoba: "Garderoba i szafa na wymiar Gdańsk",
+  szafkaRTV: "Zabudowa salonowa i szafka RTV na zamówienie",
+  lazienka: "Meble łazienkowe na wymiar Gdańsk",
+};
+
+function getPhotoAlt(category: PhotoCategory, id: string, index?: number): string {
+  const base = CATEGORY_NAMES[category] ?? "Meble na wymiar Gdańsk";
+  return index !== undefined
+    ? `${base} – realizacja ${id} (zdjęcie ${index + 1}) | MA SENS Studio`
+    : `${base} – realizacja ${id} | MA SENS Studio`;
+}
+
+
 export function PhotoGrid({ projects, t, showFilter = false }: Props) {
+
   const [active, setActive] = useState<PhotoCategory | "all">("all");
   const [activeProject, setActiveProject] = useState<PhotoProject | null>(null);
   const [currentImgIndex, setCurrentImgIndex] = useState<number>(0);
@@ -139,7 +155,7 @@ export function PhotoGrid({ projects, t, showFilter = false }: Props) {
             >
               <Image
                 src={src}
-                alt={`MA SENS – ${project.category} ${project.id}`}
+                alt={getPhotoAlt(project.category, project.id)}
                 fill
                 sizes="(max-width: 768px) 50vw, 33vw"
                 style={{ objectFit: "cover" }}
@@ -157,7 +173,7 @@ export function PhotoGrid({ projects, t, showFilter = false }: Props) {
           className={styles.lightbox}
           role="dialog"
           aria-modal="true"
-          aria-label="Powiększone zdjęcie"
+          aria-label="Powiększone zdjęcie realizacji"
           onClick={() => setActiveProject(null)}
         >
           <button
@@ -205,13 +221,18 @@ export function PhotoGrid({ projects, t, showFilter = false }: Props) {
           >
             <Image
               src={activeProject.images[currentImgIndex]}
-              alt={`Powiększone zdjęcie realizacji – ${currentImgIndex + 1} z ${activeProject.images.length}`}
+              alt={getPhotoAlt(
+                activeProject.category,
+                activeProject.id,
+                currentImgIndex
+              )}
               fill
               sizes="100vw"
               style={{ objectFit: "contain" }}
               priority
             />
           </div>
+
 
           {activeProject.images.length > 1 && (
             <div className={styles.lightboxCounter}>

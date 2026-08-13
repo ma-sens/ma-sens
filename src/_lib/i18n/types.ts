@@ -31,6 +31,7 @@ export interface Translations {
 
   nav: {
     home: string;
+    offer: string;
     kitchens: string;
     wardrobes: string;
     dressing: string;
@@ -41,6 +42,7 @@ export interface Translations {
     faq: string;
     contact: string;
   };
+
 
   cta: {
     freeQuote: string;

@@ -10,6 +10,7 @@ export const pl: Translations = {
   // Nav
   nav: {
     home: "Strona główna",
+    offer: "Oferta",
     kitchens: "Kuchnie",
     wardrobes: "Szafy",
     dressing: "Garderoby",
@@ -20,6 +21,7 @@ export const pl: Translations = {
     faq: "FAQ",
     contact: "Kontakt",
   },
+
 
   // CTA buttons
   cta: {
@@ -34,11 +36,13 @@ export const pl: Translations = {
   // Hero
   hero: {
     tagline: "Każdy centymetr ma sens.",
-    subtitle: "Meble na wymiar Gdańsk",
+    subtitle: "Meble na wymiar Gdańsk – Kuchnie, Szafy, Garderoby",
     description:
-      "Nie zaczynamy od mebli. Zaczynamy od przestrzeni. Tworzymy meble, które naprawdę pasują do Twojego życia.",
+      "Nie zaczynamy od mebli. Zaczynamy od przestrzeni. Tworzymy meble kuchenne, szafy wnękowe i garderoby na zamówienie, które idealnie pasują do Twojego wnętrza.",
     badge: "Gdańsk i Trójmiasto",
   },
+
+
 
   // Why custom
   whyCustom: {

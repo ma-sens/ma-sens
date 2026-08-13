@@ -11,7 +11,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(250, 250, 249, 0.9);
+  background-color: rgba(250, 250, 249, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   z-index: -1;
@@ -45,8 +45,8 @@
   transform: translateX(-7px);
 }
 
-/* Nav */
-.nav {
+/* Desktop Nav */
+.desktopNav {
   display: flex;
   align-items: center;
   gap: var(--space-1);
@@ -60,6 +60,7 @@
   color: var(--color-muted);
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-sm);
+  text-decoration: none;
   transition:
     color var(--transition-fast),
     background-color var(--transition-fast);
@@ -75,6 +76,91 @@
   font-weight: 500;
 }
 
+/* Dropdown Container */
+.dropdownWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+.chevron {
+  transition: transform var(--transition-fast);
+  opacity: 0.6;
+}
+
+.chevronRotated {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 250px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  animation: fadeInDown 0.15s ease-out;
+  z-index: 110;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdownItem {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background-color var(--transition-fast);
+}
+
+.dropdownItem:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.dropdownItemActive {
+  background-color: rgba(181, 147, 106, 0.08);
+}
+
+.dropdownItemTitle {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-fg);
+}
+
+.dropdownItemDesc {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  margin-top: 2px;
+}
+
+/* Header CTA */
 .navCta {
   font-size: var(--text-sm);
   font-weight: 500;
@@ -82,10 +168,12 @@
   background-color: var(--color-fg);
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-sm);
+  text-decoration: none;
   transition:
     background-color var(--transition-fast),
     transform var(--transition-fast);
   margin-left: var(--space-2);
+  white-space: nowrap;
 }
 
 .navCta:hover {
@@ -110,7 +198,6 @@
   cursor: pointer;
   background: none;
   border: none;
-  /* Safari: prevent default button styling (border/border-radius) */
   -webkit-appearance: none;
   appearance: none;
 }
@@ -131,8 +218,6 @@
 }
 
 .burgerLineOpen2 {
-  /* Safari sometimes ignores opacity:0 on children of appearance:none buttons.
-     scaleX(0) is a reliable fallback to ensure the middle line disappears. */
   opacity: 0;
   transform: scaleX(0);
 }
@@ -141,58 +226,160 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  /* When menu is open on mobile — solid background, no blur */
+/* Mobile Nav Drawer */
+.mobileNav {
+  display: none;
+}
+
+@media (max-width: 900px) {
   .headerMenuOpen::before {
     background-color: var(--color-bg);
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
 
+  .desktopNav {
+    display: none;
+  }
+
   .burger {
     display: flex;
   }
 
-  .nav {
+  .mobileNav {
     display: none;
     position: fixed;
-    top: 65px;
+    top: 64px;
     left: 0;
     right: 0;
     bottom: 0;
     width: 100%;
-    max-width: 100%;
-    /* Below header z-index (100) so header bar renders on top */
     z-index: 50;
     background-color: var(--color-bg);
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: var(--space-8) var(--space-6);
-    gap: var(--space-2);
-    overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
+    padding: var(--space-6);
   }
 
-  .navOpen {
+  .mobileNavOpen {
+    display: block;
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .mobileContent {
     display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
   }
 
-  .navLink {
-    font-size: var(--text-xl);
+  .mobileAccordion {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-3);
+  }
+
+  .mobileAccordionBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    padding: var(--space-3) var(--space-4);
+    padding: var(--space-3) var(--space-2);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
   }
 
-  .navCta {
-    margin-left: 0;
-    margin-top: var(--space-4);
+  .mobileLinkText {
+    font-size: var(--text-xl);
+    font-weight: 500;
+    color: var(--color-fg);
+  }
+
+  .mobileLinkActiveText {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+
+  .mobileChevron {
+    transition: transform var(--transition-fast);
+  }
+
+  .mobileChevronRotated {
+    transform: rotate(180deg);
+  }
+
+  .mobileSubList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding-left: var(--space-3);
+    margin-top: var(--space-2);
+    border-left: 2px solid var(--color-border);
+  }
+
+  .mobileSubLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    padding: var(--space-2) var(--space-3);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: color var(--transition-fast);
+  }
+
+  .mobileSubLink:hover,
+  .mobileSubLinkActive {
+    color: var(--color-fg);
+    font-weight: 500;
+    background-color: var(--color-surface-hover);
+  }
+
+  .mobileSubArrow {
+    opacity: 0.4;
+    font-size: var(--text-sm);
+  }
+
+  .mobileNavLink {
+    font-size: var(--text-xl);
+    font-weight: 500;
+    color: var(--color-fg);
+    padding: var(--space-3) var(--space-2);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .mobileNavLinkActive {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .mobileCtaWrapper {
+    margin-top: var(--space-6);
+  }
+
+  .mobileNavCta {
+    display: block;
     width: 100%;
     text-align: center;
-    padding: var(--space-4);
     font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--color-bg);
+    background-color: var(--color-fg);
+    padding: var(--space-4);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
   }
 }

@@ -5,19 +5,26 @@ import { getTranslations } from "../../../_lib/i18n";
 import { getProjectsByCategory } from "../../../_lib/photos";
 import { ServicePage } from "../../../_components/portfolio/ServicePage";
 
+import { createSeoMetadata } from "../../../_lib/seo/metadata";
+
 interface Props { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: raw } = await params;
   const locale: Locale = isValidLocale(raw) ? raw : defaultLocale;
   const t = getTranslations(locale);
-  return {
+  return createSeoMetadata({
+    path: "/szafy",
+    locale,
     title: t.wardrobes.h1,
     description: t.wardrobes.meta,
-    openGraph: { title: t.wardrobes.h1, description: t.wardrobes.meta, images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "MA SENS Studio" }] },
-    twitter: { card: "summary_large_image", title: t.wardrobes.h1, description: t.wardrobes.meta, images: ["/og-image.jpg"] },
-  };
+    image: {
+      url: "/photos/szafkaRTV4,1.webp",
+      alt: "Szafy na wymiar Gdańsk – MA SENS Studio",
+    },
+  });
 }
+
 
 export default async function SzafyPage({ params }: Props) {
   const { locale: raw } = await params;

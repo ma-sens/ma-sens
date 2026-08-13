@@ -5,19 +5,26 @@ import { getTranslations } from "../../../_lib/i18n";
 import { getProjectsByCategory } from "../../../_lib/photos";
 import { ServicePage } from "../../../_components/portfolio/ServicePage";
 
+import { createSeoMetadata } from "../../../_lib/seo/metadata";
+
 interface Props { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: raw } = await params;
   const locale: Locale = isValidLocale(raw) ? raw : defaultLocale;
   const t = getTranslations(locale);
-  return {
+  return createSeoMetadata({
+    path: "/kuchnie",
+    locale,
     title: t.kitchens.h1,
     description: t.kitchens.meta,
-    openGraph: { title: t.kitchens.h1, description: t.kitchens.meta, images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "MA SENS Studio" }] },
-    twitter: { card: "summary_large_image", title: t.kitchens.h1, description: t.kitchens.meta, images: ["/og-image.jpg"] },
-  };
+    image: {
+      url: "/photos/kuchnia1,1.webp",
+      alt: "Kuchnie na wymiar Gdańsk – MA SENS Studio",
+    },
+  });
 }
+
 
 export default async function KuchniePage({ params }: Props) {
   const { locale: raw } = await params;

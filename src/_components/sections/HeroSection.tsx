@@ -6,9 +6,18 @@ import { getLocalizedPath } from "../../_lib/i18n/config";
 import styles from "./HeroSection.module.css";
 
 const HERO_IMAGES = [
-  "/photos/kuchnia1,1.webp",
-  "/photos/garderoba1,1.webp",
-  "/photos/szafkaRTV1,2.webp",
+  {
+    src: "/photos/kuchnia1,1.webp",
+    alt: "Nowoczesna kuchnia na wymiar w Gdańsku – zabudowa mebli kuchennych MA SENS Studio",
+  },
+  {
+    src: "/photos/garderoba1,1.webp",
+    alt: "Garderoba i szafa wnękowa na wymiar – Gdańsk i Trójmiasto",
+  },
+  {
+    src: "/photos/szafkaRTV1,2.webp",
+    alt: "Meble do salonu i szafka RTV na indywidualne zamówienie – MA SENS",
+  },
 ];
 
 interface Props {
@@ -21,9 +30,11 @@ export function HeroSection({ locale, t }: Props) {
     <section className={styles.hero}>
       <div className={`container ${styles.inner}`}>
         <div className={styles.content}>
-          <span className={styles.badge}>{t.hero.badge}</span>
-          <h1 className={styles.tagline}>{t.hero.tagline}</h1>
-          <p className={styles.subtitle}>{t.hero.subtitle}</p>
+          <div className={styles.topMeta}>
+            <span className={styles.badge}>{t.hero.badge}</span>
+            <p className={styles.tagline}>{t.hero.tagline}</p>
+          </div>
+          <h1 className={styles.h1}>{t.hero.subtitle}</h1>
           <p className={styles.description}>{t.hero.description}</p>
           <div className={styles.actions}>
             <Link
@@ -44,14 +55,14 @@ export function HeroSection({ locale, t }: Props) {
         </div>
 
         <div className={styles.gallery}>
-          {HERO_IMAGES.map((src, i) => (
+          {HERO_IMAGES.map((item, i) => (
             <div
-              key={src}
+              key={item.src}
               className={`${styles.galleryItem} ${styles[`galleryItem${i + 1}`]}`}
             >
               <Image
-                src={src}
-                alt={`MA SENS Studio – realizacja ${i + 1}`}
+                src={item.src}
+                alt={item.alt}
                 fill
                 sizes="(max-width: 900px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}
@@ -64,3 +75,4 @@ export function HeroSection({ locale, t }: Props) {
     </section>
   );
 }
+

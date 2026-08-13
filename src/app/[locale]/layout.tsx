@@ -13,42 +13,112 @@ interface Props {
 }
 
 
-const BASE_URL = "https://masensstudio.pl";
-
-// Maps locale → Open Graph locale string
-const OG_LOCALE: Record<string, string> = {
-  pl: "pl_PL",
-  en: "en_GB",
-  uk: "uk_UA",
-};
+import { createSeoMetadata } from "../../_lib/seo/metadata";
 
 // LocalBusiness structured data — boosts local SEO signals.
 // Schema is locale-independent (Polish business in Gdańsk).
 const LOCAL_BUSINESS_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "MA SENS Studio",
+  "@id": "https://masensstudio.pl/#localbusiness",
+  name: "MA SENS Studio – Meble na wymiar Gdańsk",
+  alternateName: "MA SENS Studio",
   url: "https://masensstudio.pl",
   image: "https://masensstudio.pl/og-image.jpg",
   description:
-    "Meble na wymiar w Gdańsku i Trójmieście. Kuchnie, szafy, garderoby, meble łazienkowe.",
-  telephone: "",
+    "Meble na wymiar w Gdańsku i Trójmieście. Kuchnie, szafy, garderoby, meble łazienkowe na indywidualne zamówienie.",
+  telephone: "+48 510 593 773",
+  email: "masensstudio.gdansk@gmail.com",
+  priceRange: "$$",
+  currenciesAccepted: "PLN",
+  paymentAccepted: "Cash, Credit Card, Bank Transfer",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Gdańsk",
     addressRegion: "Pomorskie",
     addressCountry: "PL",
+    postalCode: "80-001",
   },
   geo: {
     "@type": "GeoCoordinates",
     latitude: 54.352,
     longitude: 18.6466,
   },
-  areaServed: {
-    "@type": "AdministrativeArea",
-    name: "Trójmiasto",
+  areaServed: [
+    {
+      "@type": "City",
+      name: "Gdańsk",
+    },
+    {
+      "@type": "City",
+      name: "Sopot",
+    },
+    {
+      "@type": "City",
+      name: "Gdynia",
+    },
+    {
+      "@type": "AdministrativeArea",
+      name: "Trójmiasto",
+    },
+    {
+      "@type": "AdministrativeArea",
+      name: "Województwo pomorskie",
+    },
+  ],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+      opens: "08:00",
+      closes: "18:00",
+    },
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Usługi stolarskie i meble na wymiar",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Kuchnie na wymiar Gdańsk",
+          description: "Projektowanie i produkcja nowoczesnych mebli kuchennych na wymiar.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Szafy i zabudowy wnęk",
+          description: "Szafy przesuwne, szafy otwierane i zabudowy wnęk na wymiar.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Garderoby na wymiar",
+          description: "Pojemne i ergonomiczne garderoby na zamówienie.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Meble łazienkowe i do salonu",
+          description: "Zabudowy łazienkowe, szafki RTV i meble salonowe.",
+        },
+      },
+    ],
   },
-  priceRange: "$$",
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -56,37 +126,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale: Locale = isValidLocale(rawLocale) ? rawLocale : defaultLocale;
   const t = getTranslations(locale);
 
-  return {
-    metadataBase: new URL(BASE_URL),
-    title: { default: t.siteTitle, template: `%s | MA SENS Studio` },
+  const baseMeta = createSeoMetadata({
+    path: "/",
+    locale,
+    title: t.siteTitle,
     description: t.siteDescription,
-    robots: { index: true, follow: true },
-    openGraph: {
-      type: "website",
-      siteName: "MA SENS Studio",
-      title: t.siteTitle,
-      description: t.siteDescription,
-      locale: OG_LOCALE[locale] ?? "pl_PL",
-      alternateLocale: Object.entries(OG_LOCALE)
-        .filter(([l]) => l !== locale)
-        .map(([, v]) => v),
-      images: [
-        {
-          url: "/og-image.jpg",
-          width: 1200,
-          height: 630,
-          alt: "MA SENS Studio – meble na wymiar Gdańsk",
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t.siteTitle,
-      description: t.siteDescription,
-      images: ["/og-image.jpg"],
-    },
+  });
+
+  return {
+    ...baseMeta,
+    title: { default: t.siteTitle, template: `%s | MA SENS Studio` },
   };
 }
+
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale: rawLocale } = await params;

@@ -6,6 +6,7 @@ export const en: Translations = {
     "Custom-made furniture in Gdańsk and the Tri-City area. Every centimetre matters.",
   nav: {
     home: "Home",
+    offer: "Offer",
     kitchens: "Kitchens",
     wardrobes: "Wardrobes",
     dressing: "Dressing Rooms",
@@ -16,6 +17,7 @@ export const en: Translations = {
     faq: "FAQ",
     contact: "Contact",
   },
+
   cta: {
     freeQuote: "Free Quote",
     bookMeasure: "Book Measurement",
@@ -25,12 +27,13 @@ export const en: Translations = {
     sameDay: "Write – we'll reply the same day",
   },
   hero: {
-    tagline: "Every centimetre matters.",
-    subtitle: "Custom Furniture Gdańsk",
+    tagline: "Every centimeter makes sense.",
+    subtitle: "Custom Furniture Gdańsk – Kitchens, Wardrobes, Dressing Rooms",
     description:
-      "We don't start with furniture. We start with the space. We create furniture that truly fits your life.",
+      "We don't start with furniture. We start with your space. We create custom kitchens, built-in wardrobes, and bespoke furniture tailored to your interior.",
     badge: "Gdańsk & Tri-City",
   },
+
   whyCustom: {
     title: "Why do off-the-shelf solutions often fail?",
     intro:

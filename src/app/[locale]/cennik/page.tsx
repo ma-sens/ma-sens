@@ -5,19 +5,22 @@ import { getTranslations } from "../../../_lib/i18n";
 import { CtaSection } from "../../../_components/sections/CtaSection";
 import styles from "./page.module.css";
 
+import { createSeoMetadata } from "../../../_lib/seo/metadata";
+
 interface Props { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: raw } = await params;
   const locale: Locale = isValidLocale(raw) ? raw : defaultLocale;
   const t = getTranslations(locale);
-  return {
+  return createSeoMetadata({
+    path: "/cennik",
+    locale,
     title: t.pricingPage.h1,
     description: t.pricingPage.meta,
-    openGraph: { title: t.pricingPage.h1, description: t.pricingPage.meta, images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "MA SENS Studio" }] },
-    twitter: { card: "summary_large_image", title: t.pricingPage.h1, description: t.pricingPage.meta, images: ["/og-image.jpg"] },
-  };
+  });
 }
+
 
 export default async function CennikPage({ params }: Props) {
   const { locale: raw } = await params;

@@ -6,18 +6,20 @@ import { CtaSection } from "../../../_components/sections/CtaSection";
 import { FaqAccordion } from "./FaqAccordion";
 import styles from "./page.module.css";
 
+import { createSeoMetadata } from "../../../_lib/seo/metadata";
+
 interface Props { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: raw } = await params;
   const locale: Locale = isValidLocale(raw) ? raw : defaultLocale;
   const t = getTranslations(locale);
-  return {
+  return createSeoMetadata({
+    path: "/faq",
+    locale,
     title: t.faq.h1,
     description: t.faq.meta,
-    openGraph: { title: t.faq.h1, description: t.faq.meta, images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "MA SENS Studio" }] },
-    twitter: { card: "summary_large_image", title: t.faq.h1, description: t.faq.meta, images: ["/og-image.jpg"] },
-  };
+  });
 }
 
 export default async function FaqPage({ params }: Props) {
@@ -25,8 +27,28 @@ export default async function FaqPage({ params }: Props) {
   const locale: Locale = isValidLocale(raw) ? raw : defaultLocale;
   const t = getTranslations(locale);
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: t.faq.items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: static FAQ schema, safe
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
       <section className={styles.hero}>
         <div className="container">
           <h1 className={styles.h1}>{t.faq.h1}</h1>
@@ -41,3 +63,4 @@ export default async function FaqPage({ params }: Props) {
     </>
   );
 }
+

@@ -4,19 +4,22 @@ import { isValidLocale, defaultLocale } from "../../../_lib/i18n/config";
 import { getTranslations } from "../../../_lib/i18n";
 import styles from "./page.module.css";
 
+import { createSeoMetadata } from "../../../_lib/seo/metadata";
+
 interface Props { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: raw } = await params;
   const locale: Locale = isValidLocale(raw) ? raw : defaultLocale;
   const t = getTranslations(locale);
-  return {
+  return createSeoMetadata({
+    path: "/kontakt",
+    locale,
     title: t.contact.h1,
     description: t.contact.meta,
-    openGraph: { title: t.contact.h1, description: t.contact.meta, images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "MA SENS Studio" }] },
-    twitter: { card: "summary_large_image", title: t.contact.h1, description: t.contact.meta, images: ["/og-image.jpg"] },
-  };
+  });
 }
+
 
 export default async function KontaktPage({ params }: Props) {
   const { locale: raw } = await params;
